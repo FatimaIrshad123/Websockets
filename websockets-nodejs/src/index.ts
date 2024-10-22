@@ -6,6 +6,8 @@ const server = http.createServer(function(request: any, response: any) {
     response.end("hi there");
 });
 
+let userCount = 0;
+
 const wss = new WebSocketServer({ server });
 
 wss.on('connection', function connection(ws) {
@@ -18,7 +20,7 @@ wss.on('connection', function connection(ws) {
       }
     });
   });
-
+  console.log('User connected', ++userCount)
   ws.send('Hello! Message From Server!!');
 });
 
