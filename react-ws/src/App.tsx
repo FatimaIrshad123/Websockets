@@ -25,10 +25,10 @@ function App() {
     if (!socket){
       return <div>Connecting to socket server ...</div>
     }
-    console.log(latestMessage)
+    //console.log(latestMessage)
   return (
     <>
-      <input onChange={(e) => setMessage(e.target.value)}></input>
+      <input onChange={(e) => setLatestMessage(e.target.value)}></input>
       <button onClick={() => {socket.send(message)}}>Send</button>
      {latestMessage} 
     </>
